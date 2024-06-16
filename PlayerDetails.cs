@@ -76,11 +76,6 @@ namespace PlayerDetailsSpace
                 }
             }
 
-            static void CreateNewPlayer()
-            {
-                //NEW FILE CREATING HERE FOR NEW PLAYER
-            }
-
             static void LoadPlayerDetails()
             {
                 var dic = File.ReadAllLines("Nathan.txt")/*strPlayerName + ".txt")*/
