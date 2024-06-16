@@ -1,0 +1,17 @@
+**TODO**
+
+New viod to stop doubling lines after password retry
+	maybe bool too
+
+no empty readlines
+user no special keys
+
+ending file needs wait for key press not readline
+exit string
+	checking if any readline contains exit > end file
+		Environment.Exit();??
+
+overwrite old file data for stats
+	prefer just them lines so no password or user changed
+	otherwise overwrite entire files and safe new lines
+convert int stat number to string for saving
