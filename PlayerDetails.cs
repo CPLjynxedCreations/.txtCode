@@ -23,9 +23,9 @@ namespace PlayerDetailsSpace
         {
             Console.WriteLine("**WELCOME**");
             Console.WriteLine("Please enter Players name");
-            strPlayerName = "Nathan";// Console.ReadLine();
+            strPlayerName = "Nathan";// Console.ReadLine();                 //REVERT BACK LATER
 
-            if (!File.Exists("Nathan.txt")) /*strPlayerName + ".txt"))*/
+            if (!File.Exists("Nathan.txt")) /*strPlayerName + ".txt"))*/                 //REVERT BACK LATER
             {
                 Console.WriteLine("**NO EXISTING ACCOUNT**");
                 Console.WriteLine("Please enter a password");
@@ -46,14 +46,14 @@ namespace PlayerDetailsSpace
                     Console.WriteLine("Password does not match");
                 }
             }
-            else if (File.Exists(/*strPlayerName + ".txt"*/ "Nathan.txt"))
+            else if (File.Exists(/*strPlayerName + ".txt"*/ "Nathan.txt"))                 //REVERT BACK LATER
             {
                 Console.Clear();
                 // IF FILE FOUND GET THE DETAILS
                 LoadPlayerDetails();
                 Console.WriteLine("**ACCOUNT FOUND**");
                 Console.WriteLine("Please enter your password");
-                strPlayerPassword = "poop";/*Console.ReadLine(); */
+                strPlayerPassword = "poop";/*Console.ReadLine(); */                 //REVERT BACK LATER
                 LoadPlayerDetails();
                 if (boolPlayerLoggedIn)
                 {
@@ -68,7 +68,7 @@ namespace PlayerDetailsSpace
                     intPlayerMoney = Convert.ToInt32(strPlayerMoney);
                     intPlayerXp = Convert.ToInt32(strPlayerXp);
                     Console.ReadLine();
-                    //SavePlayerDetails();
+                    SavePlayerDetails();
                 }
                 else
                 {
@@ -109,12 +109,26 @@ namespace PlayerDetailsSpace
             }
             static void SavePlayerDetails()
             {
-                //WRITE OVER OLD FILE WITH NEW PLAYER STATS
-                //intPlayerLevel = 30;
-                //ADDS EXTRA LINE AT THE END OF THE FILE
-                //ADD ALL PLAYER DATA
-                //File.AppendAllText(strPlayerName + ".txt",
-                //"\nPOINTS = " + intPlayerLevel + "\n");
+                //ADDED CHANGE TO SEE RESULTS
+                intPlayerLevel = 3;
+                intPlayerMoney = 2000;
+                intPlayerXp = 400;
+                System.IO.File.WriteAllText("Nathan.txt", string.Empty);
+                File.AppendAllText(strPlayerName + ".txt",
+                        "PLAYER NAME = " + strPlayerName + "\n" +
+                        "PLAYER PASSWORD = " + strPlayerPassword + "\n" +
+                        "PLAYER LEVEL = " + intPlayerLevel + "\n" +
+                        "PLAYER MONEY = " + intPlayerMoney + "\n" +
+                        "PLAYER XP = " + intPlayerXp + "\n" +
+                        "PLAYER FILE = UPDATED");
+                //ADD EXTRA FILE INFO TO BE SAVED AT FILE MAKE
+                Console.Clear();
+                Console.WriteLine("**PLAYER DATA UPDATED**");
+                Console.WriteLine("Player name is: " + strPlayerName);
+                Console.WriteLine("level is: " + strPlayerLevel);
+                Console.WriteLine("money is: " + strPlayerMoney);
+                Console.WriteLine("xp is: " + strPlayerXp);
+                //ADD EXTRA SAVE DETAILS
             }
         }
     }
