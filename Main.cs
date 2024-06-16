@@ -13,7 +13,7 @@ namespace MainSpace
         {
             Console.Clear();
 
-            PlayerDetailsClass.PlayerDetailsEnter();
+            PlayerDetailsClass.PlayerWelcome();
             //MAIN TO BECOME CORE FILE FOR NAVIGATION
             //REST IS RANDOM
 
