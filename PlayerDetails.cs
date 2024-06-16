@@ -20,6 +20,7 @@ namespace PlayerDetailsSpace
 
         static public void PlayerDetailsEnter()
         {
+            /*
             Console.WriteLine("**WELCOME**");
             Console.WriteLine("Please enter Players name");
             strPlayerName = Console.ReadLine();
@@ -69,18 +70,18 @@ namespace PlayerDetailsSpace
                 }
 
             }
-            else if (File.Exists(strPlayerName + ".txt"))
+            else */ if (File.Exists(/*strPlayerName + ".txt"*/ "Nathan.txt"))
             {
                 Console.Clear();
                 // IF FILE FOUND GET THE DETAILS
-                var dic = File.ReadAllLines(strPlayerName + ".txt")
+                var dic = File.ReadAllLines("Nathan.txt")/*strPlayerName + ".txt")*/
                         .Select(l => l.Split(new[] { '=' }))
                         .ToDictionary(s => s[0].Trim(), s => s[1].Trim());
 
                 strPlayerSavedPassword = dic["PLAYER PASSWORD"];
                 Console.WriteLine("**ACCOUNT FOUND**");
                 Console.WriteLine("Please enter your password");
-                strPlayerPassword = Console.ReadLine();
+                strPlayerPassword = "poop";/*Console.ReadLine(); */
 
                 if (strPlayerPassword == strPlayerSavedPassword)
                 {
@@ -98,7 +99,7 @@ namespace PlayerDetailsSpace
                     intPlayerLevel = Convert.ToInt32(strPlayerLevel);
                     intPlayerMoney = Convert.ToInt32(strPlayerMoney);
                     intPlayerXp = Convert.ToInt32(strPlayerXp);
-                    SavePlayerDetails();
+                    //SavePlayerDetails();
                 }
                 else
                 {
@@ -120,11 +121,11 @@ namespace PlayerDetailsSpace
         static void SavePlayerDetails()
         {
             //WRITE OVER OLD FILE WITH NEW PLAYER STATS
-            intPlayerLevel = 30;
+            //intPlayerLevel = 30;
             //ADDS EXTRA LINE AT THE END OF THE FILE
             //ADD ALL PLAYER DATA
-            File.AppendAllText(strPlayerName + ".txt",
-                        "\nPOINTS = " + intPlayerLevel + "\n");
+            //File.AppendAllText(strPlayerName + ".txt",
+                        //"\nPOINTS = " + intPlayerLevel + "\n");
         }
     }
 }
