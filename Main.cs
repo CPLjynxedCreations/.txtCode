@@ -14,7 +14,8 @@ namespace MainSpace
             Console.Clear();
 
             PlayerDetailsClass.PlayerDetailsEnter();
-
+            //MAIN TO BECOME CORE FILE FOR NAVIGATION
+            //REST IS RANDOM
 
             
             

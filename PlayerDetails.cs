@@ -39,6 +39,7 @@ namespace PlayerDetailsSpace
 
             if (!File.Exists(strPlayerName + ".txt"))
             {
+                Console.WriteLine("**NO EXISTING ACCOUNT**");
                 Console.WriteLine("Please enter a password");
                 strPlayerNewPassword = Console.ReadLine();
                 Console.Clear();
@@ -62,6 +63,7 @@ namespace PlayerDetailsSpace
                 }
                 else
                 {
+                    
                     Console.WriteLine("Password does not match");
                     //make it restart password enter
                 }
@@ -105,13 +107,24 @@ namespace PlayerDetailsSpace
             }
         }
 
-        staic void SavePlayerDetails()
+        static void CreateNewPlayer()
+        {
+            //NEW FILE CREATING HERE FOR NEW PLAYER
+        }
+
+        static void LoadPlayerDetails()
+        {
+            //IF ACCOUNT. LOAD ACCOUNT HERE 
+        }
+
+        static void SavePlayerDetails()
         {
             //WRITE OVER OLD FILE WITH NEW PLAYER STATS
-            //ALSO CONVERT INT'S TO STRING FOR FILE SAVE
-            Console.WriteLine("level " + intPlayerLevel);
-            Console.WriteLine("money " + intPlayerMoney);
-            Console.WriteLine("xp " + intPlayerXp);
+            intPlayerLevel = 30;
+            //ADDS EXTRA LINE AT THE END OF THE FILE
+            //ADD ALL PLAYER DATA
+            File.AppendAllText(strPlayerName + ".txt",
+                        "\nPOINTS = " + intPlayerLevel + "\n");
         }
     }
 }

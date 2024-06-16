@@ -1,5 +1,11 @@
 **TODO**
 
+*UPDATE NEW / LOAD VOIDS FROM DATA
+*CREATE BOOL FOR MATCHING PASSWORD
+*LOOP FOR PASSWORD CREATION
+*NAME COMFIRMATION
+
+
 New viod to stop doubling lines after password retry
 	maybe bool too
 
@@ -14,4 +20,3 @@ exit string
 overwrite old file data for stats
 	prefer just them lines so no password or user changed
 	otherwise overwrite entire files and safe new lines
-convert int stat number to string for saving
