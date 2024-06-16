@@ -1,11 +1,7 @@
 **TODO**
 
-*LOOP FOR PASSWORD CREATION
+
 *NAME COMFIRMATION
-
-
-New viod to stop doubling lines after password retry
-	maybe bool too
 
 no empty readlines
 user no special keys
