@@ -1,7 +1,5 @@
 **TODO**
 
-*UPDATE NEW / LOAD VOIDS FROM DATA
-*CREATE BOOL FOR MATCHING PASSWORD
 *LOOP FOR PASSWORD CREATION
 *NAME COMFIRMATION
 
@@ -17,6 +15,15 @@ exit string
 	checking if any readline contains exit > end file
 		Environment.Exit();??
 
-overwrite old file data for stats
-	prefer just them lines so no password or user changed
-	otherwise overwrite entire files and safe new lines
+
+
+
+
+
+**//REQUIRES OLD INVENTORY FILES\\**
+Make new inventory txt file from this code
+	List by [0] = <itemString>
+	>load list for shop
+	>have player item txt for inventory
+	>if player can only have 1 check inventory from shop list and make unavailble
+	>

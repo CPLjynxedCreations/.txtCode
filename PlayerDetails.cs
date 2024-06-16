@@ -23,9 +23,9 @@ namespace PlayerDetailsSpace
         {
             Console.WriteLine("**WELCOME**");
             Console.WriteLine("Please enter Players name");
-            strPlayerName = "Nathan";// Console.ReadLine();                 //REVERT BACK LATER
+            strPlayerName = Console.ReadLine();
 
-            if (!File.Exists("Nathan.txt")) /*strPlayerName + ".txt"))*/                 //REVERT BACK LATER
+            if (!File.Exists(strPlayerName + ".txt"))
             {
                 Console.WriteLine("**NO EXISTING ACCOUNT**");
                 Console.WriteLine("Please enter a password");
@@ -44,16 +44,17 @@ namespace PlayerDetailsSpace
                 else
                 {
                     Console.WriteLine("Password does not match");
+                    PlayerWelcome();
                 }
             }
-            else if (File.Exists(/*strPlayerName + ".txt"*/ "Nathan.txt"))                 //REVERT BACK LATER
+            else if (File.Exists(strPlayerName + ".txt"))
             {
                 Console.Clear();
                 // IF FILE FOUND GET THE DETAILS
                 LoadPlayerDetails();
                 Console.WriteLine("**ACCOUNT FOUND**");
                 Console.WriteLine("Please enter your password");
-                strPlayerPassword = "poop";/*Console.ReadLine(); */                 //REVERT BACK LATER
+                strPlayerPassword = Console.ReadLine();
                 LoadPlayerDetails();
                 if (boolPlayerLoggedIn)
                 {
@@ -72,13 +73,17 @@ namespace PlayerDetailsSpace
                 }
                 else
                 {
+                    Console.Clear();
                     Console.WriteLine("Wrong Password");
+                    Console.WriteLine("Press enter to continue");
+                    Console.ReadLine();
+                    PlayerWelcome();
                 }
             }
 
             static void LoadPlayerDetails()
             {
-                var dic = File.ReadAllLines("Nathan.txt")/*strPlayerName + ".txt")*/
+                var dic = File.ReadAllLines(strPlayerName + ".txt")
                         .Select(l => l.Split(new[] { '=' }))
                         .ToDictionary(s => s[0].Trim(), s => s[1].Trim());
                 strPlayerSavedPassword = dic["PLAYER PASSWORD"];
@@ -113,7 +118,7 @@ namespace PlayerDetailsSpace
                 intPlayerLevel = 3;
                 intPlayerMoney = 2000;
                 intPlayerXp = 400;
-                System.IO.File.WriteAllText("Nathan.txt", string.Empty);
+                System.IO.File.WriteAllText(strPlayerName + ".txt", string.Empty);
                 File.AppendAllText(strPlayerName + ".txt",
                         "PLAYER NAME = " + strPlayerName + "\n" +
                         "PLAYER PASSWORD = " + strPlayerPassword + "\n" +
