@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using MainSpace;
+using PlayerNavSpace;
 
 namespace PlayerDetailsSpace
 {
@@ -23,7 +25,9 @@ namespace PlayerDetailsSpace
         {
             Console.WriteLine("**WELCOME**");
             Console.WriteLine("Please enter Players name");
-            strPlayerName = Console.ReadLine();
+            //strPlayerName = Console.ReadLine();
+            PlayerNavClass.PlayerNav();
+            PlayerNavClass.strPlayerInput = strPlayerName;
 
             if (!File.Exists(strPlayerName + ".txt"))
             {
