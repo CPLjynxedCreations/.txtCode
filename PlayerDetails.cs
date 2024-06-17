@@ -25,9 +25,8 @@ namespace PlayerDetailsSpace
         {
             Console.WriteLine("**WELCOME**");
             Console.WriteLine("Please enter Players name");
-            //strPlayerName = Console.ReadLine();
             PlayerNavClass.PlayerNav();
-            PlayerNavClass.strPlayerInput = strPlayerName;
+            strPlayerName = PlayerNavClass.strPlayerInput;
 
             if (!File.Exists(strPlayerName + ".txt"))
             {
